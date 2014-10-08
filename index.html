@@ -21,8 +21,8 @@
                     var stationItem = document.createElement("li"),
                         station     = stations[i];
 
-                    station.textContent = station.name + " has " + station.bikesAvailable + " available";
-                    list.appendChild(station);
+                    stationItem.textContent = station.name + " has " + station.bikesAvailable + " bikes available";
+                    list.appendChild(stationItem);
                 }
             });
         </script>
