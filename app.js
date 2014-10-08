@@ -5,7 +5,9 @@ function parseBikeStationsFromXml(xml) {
       name: bikeStation.querySelector("station_name"),
       bikesAvailable: bikeStation.querySelector("nb_bikes")
     })
-  }); 
+  });
+
+  return stations;
 }
 
 function updateData(callback) {
