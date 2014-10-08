@@ -2,8 +2,8 @@ function parseBikeStationsFromXml(xml) {
   var stations = [];
   [].forEach.call(xml.childNodes[0].childNodes, function(bikeStation) {
     stations.push({
-      name: bikeStation.querySelector("station_name"),
-      bikesAvailable: bikeStation.querySelector("nb_bikes")
+      name: bikeStation.querySelector("station_name").textContent,
+      bikesAvailable: bikeStation.querySelector("nb_bike").textContent
     })
   });
 
