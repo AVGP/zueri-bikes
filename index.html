@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Züri Bikes</title>
+        <meta name="charset" content="utf8">
+    </head>
+    <body>
+        <h1>Bikes available for lending right now</h1>
+        <ul id="stations"></ul>
+        <script src="app.js"></script>
+        <script>
+            updateData(function(err, stations) {
+                if(err) {
+                    alert("Error: " + err);
+                    return;
+                }
+
+                var list = document.getElementById("stations");
+                clearChildren(list);
+                for(var i=0, len = stations.length; i<len; i++) {
+                    var stationItem = document.createElement("li"),
+                        station     = stations[i];
+
+                    station.textContent = station.name + " has " + station.bikesAvailable + " available";
+                    list.appendChild(station);
+                }
+            });
+        </script>
+    </body>
+</html>
